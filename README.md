@@ -4,6 +4,10 @@ This repo contains the configuration to setup my machines. This is using [Chezmo
 
 This automated setup is currently only configured for Fedora machines.
 
+## Install manual deps
+
+- https://www.nerdfonts.com/
+
 ## How to run
 
 ```shell
