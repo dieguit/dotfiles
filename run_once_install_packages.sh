@@ -1,15 +1,12 @@
 #!/bin/sh
 
-{{ if eq .chezmoi.os "linux" -}}
-sudo apt install ripgrep lazygit lazydocker fzf fd-find
-{{ else if eq .chezmoi.os "darwin" -}}
-brew install ripgrep
-brew install fzf
-brew install fd
-brew install lazygit
-brew install lazydocker
-brew install neovim
-{{ end -}}
+# node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+# homebrew stuff
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick font-symbols-only-nerd-font lazydocker neovim
 
 # install oh-my-zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
