@@ -1,0 +1,57 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+#ZSH_THEME="spaceship"
+
+bindkey -v
+export KEYTIMEOUT=1
+
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
+
+export RPS1="%{$reset_color%}"
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias gst="git status"
+alias dps="docker ps"
+alias lzd="lazydocker"
+alias tm='task-master'
+alias taskmaster='task-master'
+
+export PATH=~/.local/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH=/home/dieguit/.opencode/bin:$PATH
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export ANTHROPIC_API_KEY_BK={{onepasswordRead "op://Personal/anthropic-api-key/credential" }}
+export GOOGLE_API_KEY={{onepasswordRead "op://Personal/google-api-key/credential" }}
+export GOOGLE_SEARCH_API_KEY={{onepasswordRead "op://Personal/google-search-api-key/credential" }}
+export GOOGLE_SEARCH_ENGINE_ID={{onepasswordRead "op://Personal/google-search-engine-id/credential" }}
+export GEMINI_API_KEY={{onepasswordRead "op://Personal/gemini-api-key/credential" }}
+export GROQ_API_KEY={{onepasswordRead "op://Personal/groq-api-key/credential" }}
+export OPENROUTER_API_KEY={{onepasswordRead "op://Personal/openrouter-api-key/credential" }}
+export PERPLEXITY_API_KEY={{onepasswordRead "op://Personal/perplexity-api-key/credential" }}
+
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
